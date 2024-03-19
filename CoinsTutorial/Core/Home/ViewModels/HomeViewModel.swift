@@ -29,6 +29,13 @@ class HomeViewModel: ObservableObject {
             
             guard let data = data else { return }
             
+            do {
+                let coins = try JSONDecoder().decode([Coin].self, from: data)
+                print("Debug: coins \(coins)")
+            } catch {
+                print("Debug: error \(error.localizedDescription)")
+            }
+            
         }.resume()
     }
 }
