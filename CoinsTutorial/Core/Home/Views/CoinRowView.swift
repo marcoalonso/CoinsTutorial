@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct CoinRowView: View {
+    let coin: Coin
+    
     var body: some View {
         HStack {
             // market cap rank
-            Text("1")
-                .font(.caption)
-                .foregroundColor(.gray)
+            if let marketCap = coin.marketCapRank {
+                Text(marketCap.withoutDecimal())
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            
             
             //image
             Image(systemName: "bitcoinsign.circle.fill")
@@ -24,12 +29,12 @@ struct CoinRowView: View {
             
             // coin name info
             VStack(alignment: .leading) {
-                Text("Bitcoin")
+                Text(coin.name)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
-                Text("BTC")
+                Text(coin.symbol.uppercased())
                     .font(.caption)
                     .padding(.leading, 6)
             }
@@ -39,12 +44,12 @@ struct CoinRowView: View {
             
             // coin price info
             VStack(alignment: .trailing) {
-                Text("$56,543.56")
+                Text("$\(coin.currentPrice.formattedString())")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
-                Text("-5.54%")
+                Text("\(coin.priceChangePercentage24H.formattedString() )")
                     .font(.caption)
                     .padding(.leading, 6)
                     .foregroundColor(.green)
@@ -53,8 +58,4 @@ struct CoinRowView: View {
         .padding(.horizontal)
         .padding(.vertical, 4)
     }
-}
-
-#Preview {
-    CoinRowView()
 }
