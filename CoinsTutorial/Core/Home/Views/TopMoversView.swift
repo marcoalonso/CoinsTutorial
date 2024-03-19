@@ -28,5 +28,5 @@ struct TopMoversView: View {
 }
 
 #Preview {
-    TopMoversView(viewModel: HomeViewModel())
+    TopMoversView(viewModel: HomeViewModel(service: CoinService()))
 }

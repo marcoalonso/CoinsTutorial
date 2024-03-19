@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6A520FF3-2CF9-4A31-8C79-2557A9710F69"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "603041C6-C623-4801-AC2A-3A080E92C03F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoinsTutorial/Core/Home/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchCoinData(currency:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "603041C6-C623-4801-AC2A-3A080E92C03F - 13283bab22cc8224"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;CoinsTutorial.Coin&gt;, Swift.Error&gt;) -&gt; () in CoinsTutorial.HomeViewModel.fetchCoinData(currency: CoinsTutorial.CurrencyType) -&gt; ()"
+                  moduleName = "CoinsTutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SWIFT%20PROYECTS/SWIFTUI/CoinsTutorial/CoinsTutorial/Core/Home/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "603041C6-C623-4801-AC2A-3A080E92C03F - 13283bab22cc8224"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Array&lt;CoinsTutorial.Coin&gt;, Swift.Error&gt;) -&gt; () in CoinsTutorial.HomeViewModel.fetchCoinData(currency: CoinsTutorial.CurrencyType) -&gt; ()"
+                  moduleName = "CoinsTutorial"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcoalonso/Desktop/SWIFT%20PROYECTS/SWIFTUI/CoinsTutorial/CoinsTutorial/Core/Home/ViewModels/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAF09AEE-2303-47A1-91F5-36B985BD33B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoinsTutorial/Core/Home/ViewModels/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetchCoinData(currency:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

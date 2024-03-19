@@ -7,41 +7,36 @@
 
 import SwiftUI
 
+enum CurrencyType: String {
+    case usd = "usd"
+    case mxn = "mxn"
+}
+
 class HomeViewModel: ObservableObject {
     @Published var coins = [Coin]()
     @Published var topMovingCoins = [Coin]()
+    @Published var selectedCurrency: CurrencyType = .usd
     
-    init() {
-        fetchCoinData()
+    let service: CoinService
+    
+    init(service: CoinService) {
+        self.service = service
+        fetchCoinData(currency: selectedCurrency)
     }
     
-    func fetchCoinData() {
-        let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h&locale=en"
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Debug: error getting info \(error.localizedDescription)")
-            }
-            
-            if let response = response as? HTTPURLResponse {
-                print("Debug: response code: \(response.statusCode)")
-            }
-            
-            guard let data = data else { return }
-            
-            do {
-                let coins = try JSONDecoder().decode([Coin].self, from: data)
+    func fetchCoinData(currency: CurrencyType) {
+        service.fetchCoinData(currency: selectedCurrency) { result in
+            switch result {
+            case .success(let coins):
                 DispatchQueue.main.async {
                     self.coins = coins
-                    self.configureTopMovingCoins()
+                    // self.configureTopMovingCoins()
                 }
-            } catch {
-                print("Debug: error \(error.localizedDescription)")
+            case .failure(let error):
+                print("Debug: error \(error)")
             }
-            
-        }.resume()
+        }
+        
     }
     
     func configureTopMovingCoins() {

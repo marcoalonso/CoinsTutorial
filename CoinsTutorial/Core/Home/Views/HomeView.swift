@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel = HomeViewModel()
+    @StateObject var viewModel = HomeViewModel(service: CoinService())
     
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
+                CurrencyPickerView(viewModel: viewModel)
+                    .onChange(of: viewModel.selectedCurrency) { oldValue, newValue in
+                        print("Debug: newValue \(newValue)")
+                        viewModel.fetchCoinData(currency: viewModel.selectedCurrency)
+                    }
                 
                 // top movers view
                 TopMoversView(viewModel: viewModel)
